@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DocumentationFile>bin\Debug\Echo.Platforms.Disarm.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Release\Echo.Platforms.Disarm.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Disarm" Version="2022.1.0-master.57" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Core\Echo.ControlFlow\Echo.ControlFlow.csproj" />
+        <ProjectReference Include="..\..\Core\Echo.DataFlow\Echo.DataFlow.csproj" />
+        <ProjectReference Include="..\..\Core\Echo\Echo.csproj" />
+    </ItemGroup>
+
+</Project>
