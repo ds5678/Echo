@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>Echo.Platforms.LLVM</Title>
+        <Description>LLVM IR back-end powered by LLVMSharp for the Echo program analysis toolsuite.</Description>
+        <PackageTags>llvm program code analysis control-flow-graph</PackageTags>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DocumentationFile>bin\Debug\Echo.Platforms.LLVM.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Release\Echo.Platforms.LLVM.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="LLVMSharp" Version="16.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Core\Echo.ControlFlow\Echo.ControlFlow.csproj" />
+        <ProjectReference Include="..\..\Core\Echo.DataFlow\Echo.DataFlow.csproj" />
+        <ProjectReference Include="..\..\Core\Echo\Echo.csproj" />
+    </ItemGroup>
+
+</Project>
